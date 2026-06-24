@@ -973,7 +973,7 @@ public class ObjectUtils {
         }
         if (object instanceof Optional<?>) {
             // TODO Java 11 Use Optional#isEmpty()
-            return !((Optional<?>) object).isPresent();
+            return ((Optional<?>) object).isEmpty();
         }
         return false;
     }

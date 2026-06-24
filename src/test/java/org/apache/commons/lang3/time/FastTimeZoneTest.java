@@ -25,7 +25,6 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.TimeZone;
 
 import org.apache.commons.lang3.AbstractLangTest;
@@ -107,7 +106,7 @@ class FastTimeZoneTest extends AbstractLangTest {
      */
     @Test
     void testJavadocReflectsLenientBehavior() throws Exception {
-        final Path src = Paths.get("src/main/java/org/apache/commons/lang3/time/FastTimeZone.java");
+        final Path src = Path.of("src/main/java/org/apache/commons/lang3/time/FastTimeZone.java");
         final String body = new String(Files.readAllBytes(src), StandardCharsets.UTF_8);
         assertTrue(body.contains("defaulting to GMT for an unrecognized but parseable input"));
     }
